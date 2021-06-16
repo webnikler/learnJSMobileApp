@@ -48,7 +48,7 @@ export class AuthService {
         const payload = { email };
 
         return {
-            access_token: await this.jwtService.sign(payload),
+            access_token: this.jwtService.sign(payload),
         };
     }
 }
