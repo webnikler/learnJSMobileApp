@@ -31,6 +31,7 @@
     "@nestjs/jwt": "^7.2.0",
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.8.0",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
@@ -41,6 +42,7 @@
     "react-native": "0.64.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
+    "swagger-ui-express": "^4.1.6",
     "tslib": "^2.0.0"
   },
   "devDependencies": {

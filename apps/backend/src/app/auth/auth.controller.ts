@@ -1,4 +1,5 @@
 import { BadRequestException, Body, Controller, Get, HttpCode, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger/dist';
 import { UserService } from '../user/user.service';
 import { ALREADY_REGISTERED_ERROR } from './auth.constants';
 import { AuthService } from './auth.service';
@@ -12,6 +13,7 @@ export class AuthController {
         private readonly userService: UserService,
     ) { }
 
+    @ApiTags('Auth')
     @UsePipes(new ValidationPipe())
     @Post('register')
     async register(@Body() dto: AuthDto) {
@@ -24,6 +26,7 @@ export class AuthController {
         return this.userService.createUser(dto);
     }
 
+    @ApiTags('Auth')
     @UsePipes(new ValidationPipe())
     @HttpCode(200)
     @Post('login')
@@ -33,6 +36,7 @@ export class AuthController {
         return this.authService.login(email);
     }
 
+    @ApiTags('Auth')
     @UseGuards(JwtAuthGuard)
     @Get('test')
     async testAuth() {
