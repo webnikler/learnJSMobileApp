@@ -3,8 +3,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { getMongoConfig } from '../configs/mongo.config';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 
@@ -19,7 +17,5 @@ import { UserModule } from './user/user.module';
     AuthModule,
     UserModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule { }
